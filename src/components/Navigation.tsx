@@ -33,7 +33,7 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-card shadow-lg' : 'bg-transparent'
+        isScrolled ? 'glass-card shadow-lg border-b border-primary/20' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">

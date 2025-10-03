@@ -15,9 +15,13 @@ const Hero = () => {
         <img
           src={heroBg}
           alt="AI Neural Network Background"
-          className="w-full h-full object-cover opacity-10"
+          className="w-full h-full object-cover opacity-5"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/5" />
+        <div className="absolute inset-0 tech-bg" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/10" />
+        {/* Animated glow orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       {/* Content */}
@@ -44,7 +48,7 @@ const Hero = () => {
               <Button
                 onClick={scrollToContact}
                 size="lg"
-                className="gradient-primary text-white hover:shadow-glow transition-all duration-300"
+                className="gradient-primary text-background font-semibold neon-glow"
               >
                 Get In Touch
               </Button>
@@ -52,7 +56,6 @@ const Hero = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 hover:border-primary hover:text-primary"
               >
                 View Projects
               </Button>
@@ -62,9 +65,9 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="flex justify-center lg:justify-end animate-scale-in">
             <div className="relative group">
-              <div className="absolute inset-0 gradient-primary opacity-20 blur-3xl group-hover:opacity-30 transition-opacity duration-500" />
+              <div className="absolute inset-0 gradient-primary opacity-30 blur-3xl group-hover:opacity-50 transition-opacity duration-500 neon-glow" />
               <div className="relative">
-                <div className="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden border-4 border-white shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
+                <div className="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden border-2 border-primary/50 shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                   <img
                     src={profileImage}
                     alt="Shridhar P Bhovi"
@@ -72,8 +75,8 @@ const Hero = () => {
                   />
                 </div>
                 {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 gradient-accent rounded-2xl opacity-80 animate-pulse" />
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary/30 rounded-2xl backdrop-blur-sm" />
+                <div className="absolute -top-4 -right-4 w-20 h-20 gradient-accent rounded-2xl opacity-80 animate-pulse neon-glow" />
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary/30 rounded-2xl backdrop-blur-sm border border-primary/50" />
               </div>
             </div>
           </div>

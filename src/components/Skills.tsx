@@ -110,13 +110,12 @@ const Skills = () => {
         </div>
 
         {/* Future Focus */}
-        <Card className="mt-12 glass-card border-none p-8 text-center gradient-primary">
-          <div className="max-w-2xl mx-auto text-white">
+        <Card className="mt-12 glass-card border-none p-8 text-center gradient-primary neon-glow">
+          <div className="max-w-2xl mx-auto text-background">
             <h3 className="text-2xl font-bold mb-3">Continuous Learning</h3>
             <p className="opacity-90">
-              Currently expanding my expertise in advanced C++ programming, 
-              Data Structures & Algorithms, and full-stack web development to 
-              deliver comprehensive AI-powered solutions.
+              Currently expanding expertise in Data Structures & Algorithms 
+              and advanced AI/ML techniques to build innovative solutions.
             </p>
           </div>
         </Card>

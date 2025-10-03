@@ -96,12 +96,12 @@ const About = () => {
               </Card>
             ))}
 
-            <Card className="p-6 glass-card border-none gradient-primary">
-              <div className="text-white">
-                <h3 className="text-xl font-bold mb-2">Coming Soon</h3>
+            <Card className="p-6 glass-card border-none gradient-primary neon-glow">
+              <div className="text-background">
+                <h3 className="text-xl font-bold mb-2">Future Focus</h3>
                 <p className="opacity-90">
-                  Expanding expertise in C++, Data Structures & Algorithms, 
-                  and advanced web development services.
+                  Expanding expertise in Data Structures & Algorithms and 
+                  advanced AI/ML techniques to deliver cutting-edge solutions.
                 </p>
               </div>
             </Card>

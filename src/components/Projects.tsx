@@ -93,11 +93,11 @@ const Projects = () => {
                   </div>
 
                   <div className="flex flex-wrap gap-3">
-                    <Button className="gradient-primary text-white hover:shadow-glow">
+                    <Button className="gradient-primary text-background font-semibold neon-glow">
                       <ExternalLink className="w-4 h-4 mr-2" />
                       View Details
                     </Button>
-                    <Button variant="outline" className="border-2 hover:border-primary">
+                    <Button variant="outline">
                       <Github className="w-4 h-4 mr-2" />
                       Source Code
                     </Button>
@@ -108,10 +108,10 @@ const Projects = () => {
           ))}
 
           {/* More Projects Coming Soon */}
-          <Card className="glass-card border-2 border-dashed border-primary/30 p-12 text-center">
+          <Card className="glass-card border-2 border-dashed border-primary/30 p-12 text-center hover-lift">
             <div className="max-w-md mx-auto">
-              <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl text-white">+</span>
+              <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 neon-glow">
+                <span className="text-2xl text-background font-bold">+</span>
               </div>
               <h3 className="text-xl font-bold mb-2">More Projects Coming Soon</h3>
               <p className="text-muted-foreground">

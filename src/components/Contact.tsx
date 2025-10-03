@@ -108,7 +108,7 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full gradient-primary text-white hover:shadow-glow"
+                className="w-full gradient-primary text-background font-semibold neon-glow"
                 size="lg"
               >
                 <Send className="w-4 h-4 mr-2" />
@@ -148,11 +148,11 @@ const Contact = () => {
               </div>
             </div>
 
-            <Card className="glass-card border-none p-8 gradient-primary">
-              <div className="text-white">
+            <Card className="glass-card border-none p-8 gradient-primary neon-glow">
+              <div className="text-background">
                 <h4 className="text-xl font-bold mb-3">Open to Opportunities</h4>
                 <p className="opacity-90 leading-relaxed">
-                  I'm actively seeking internships and full-time positions in AI/ML 
+                  Actively seeking internships and full-time positions in AI/ML 
                   engineering, data science, and software development. Let's discuss 
                   how I can contribute to your team!
                 </p>
