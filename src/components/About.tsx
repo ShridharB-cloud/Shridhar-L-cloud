@@ -21,9 +21,18 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-gradient-subtle">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="section-padding bg-gradient-subtle relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
+          <p className="text-primary font-semibold mb-2 flex items-center justify-center gap-2">
+            <span className="w-8 h-px bg-primary" />
+            GET TO KNOW ME
+            <span className="w-8 h-px bg-primary" />
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
           <div className="w-20 h-1 gradient-primary mx-auto rounded-full" />
         </div>
@@ -31,13 +40,13 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Bio Section */}
           <div className="space-y-6 animate-fade-in">
-            <div className="glass-card p-8 rounded-2xl hover-lift">
+            <div className="glass-card p-8 rounded-2xl hover-lift perspective-card group">
               <div className="flex items-start space-x-4 mb-6">
-                <div className="p-3 gradient-primary rounded-xl">
+                <div className="p-3 gradient-primary rounded-xl group-hover:scale-110 transition-transform neon-glow">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-2">Education</h3>
+                  <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Education</h3>
                   <p className="text-muted-foreground">
                     <span className="font-semibold text-foreground">B.E. in AIML</span>
                     <br />
@@ -47,6 +56,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
+              <div className="h-1 w-0 group-hover:w-full bg-gradient-primary transition-all duration-500 rounded-full" />
             </div>
 
             <div className="space-y-4">
@@ -82,17 +92,20 @@ const About = () => {
             {expertise.map((item, index) => (
               <Card
                 key={index}
-                className="p-6 hover-lift glass-card border-none"
+                className="p-6 hover-lift glass-card border-none perspective-card group relative overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 gradient-accent rounded-xl flex-shrink-0">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
+                <div className="flex items-start space-x-4 relative z-10">
+                  <div className="p-3 gradient-accent rounded-xl flex-shrink-0 group-hover:scale-110 transition-transform neon-glow">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
                     <p className="text-muted-foreground">{item.description}</p>
                   </div>
                 </div>
+                <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-gradient-primary transition-all duration-500" />
               </Card>
             ))}
 

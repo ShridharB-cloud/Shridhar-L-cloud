@@ -47,9 +47,17 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="section-padding relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
+          <p className="text-primary font-semibold mb-2 flex items-center justify-center gap-2">
+            <span className="w-8 h-px bg-primary" />
+            LET'S CONNECT
+            <span className="w-8 h-px bg-primary" />
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
           <div className="w-20 h-1 gradient-primary mx-auto rounded-full" />
           <p className="text-muted-foreground mt-6 max-w-2xl mx-auto">
@@ -60,9 +68,10 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="glass-card border-none p-8 hover-lift animate-fade-in">
-            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <Card className="glass-card border-none p-8 hover-lift animate-fade-in perspective-card group relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
+            <h3 className="text-2xl font-bold mb-6 relative z-10 group-hover:text-primary transition-colors">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name
@@ -108,11 +117,14 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full gradient-primary text-background font-semibold neon-glow"
+                className="w-full gradient-primary text-background font-semibold neon-glow group/btn relative overflow-hidden"
                 size="lg"
               >
-                <Send className="w-4 h-4 mr-2" />
-                Send Message
+                <span className="relative z-10 flex items-center justify-center">
+                  <Send className="w-4 h-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
+                  Send Message
+                </span>
+                <div className="absolute inset-0 bg-white/20 transform translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300" />
               </Button>
             </form>
           </Card>
@@ -130,18 +142,20 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <Card className="glass-card border-none p-6 hover-lift group cursor-pointer">
-                      <div className="flex items-center space-x-4">
-                        <div className={`p-3 bg-gradient-to-br ${link.color} rounded-xl group-hover:scale-110 transition-transform`}>
+                    <Card className="glass-card border-none p-6 hover-lift group cursor-pointer perspective-card relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="flex items-center space-x-4 relative z-10">
+                        <div className={`p-3 bg-gradient-to-br ${link.color} rounded-xl group-hover:scale-110 group-hover:rotate-12 transition-all neon-glow`}>
                           <link.icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <p className="font-bold text-lg">{link.name}</p>
+                          <p className="font-bold text-lg group-hover:text-primary transition-colors">{link.name}</p>
                           <p className="text-sm text-muted-foreground">
                             {link.label}
                           </p>
                         </div>
                       </div>
+                      <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-gradient-primary transition-all duration-500" />
                     </Card>
                   </a>
                 ))}

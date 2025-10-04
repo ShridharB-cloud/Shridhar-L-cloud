@@ -42,9 +42,18 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding bg-gradient-subtle">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" className="section-padding bg-gradient-subtle relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl floating" />
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl floating-delayed" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
+          <p className="text-primary font-semibold mb-2 flex items-center justify-center gap-2">
+            <span className="w-8 h-px bg-primary" />
+            WHAT I DO
+            <span className="w-8 h-px bg-primary" />
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Skills & Expertise</h2>
           <div className="w-20 h-1 gradient-primary mx-auto rounded-full" />
           <p className="text-muted-foreground mt-6 max-w-2xl mx-auto">
@@ -57,32 +66,36 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card
               key={index}
-              className="glass-card border-none p-6 hover-lift animate-fade-in"
+              className="glass-card border-none p-6 hover-lift animate-fade-in perspective-card group relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="p-2 gradient-accent rounded-lg">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
+              
+              <div className="flex items-center space-x-3 mb-6 relative z-10">
+                <div className="p-2 gradient-accent rounded-lg neon-glow group-hover:scale-110 transition-transform">
                   <category.icon className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="font-bold text-lg">{category.category}</h3>
+                <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{category.category}</h3>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 relative z-10">
                 {category.skills.map((skill, idx) => (
-                  <div key={idx}>
+                  <div key={idx} className="group/skill">
                     <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-foreground">
+                      <span className="text-sm font-medium text-foreground group-hover/skill:text-primary transition-colors">
                         {skill.name}
                       </span>
                       <span className="text-sm font-medium text-primary">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                    <div className="h-2 bg-secondary rounded-full overflow-hidden relative">
                       <div
-                        className="h-full gradient-primary rounded-full transition-all duration-1000"
+                        className="h-full gradient-primary rounded-full transition-all duration-1000 relative"
                         style={{ width: `${skill.level}%` }}
-                      />
+                      >
+                        <div className="absolute inset-0 bg-white/20 animate-pulse" />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -98,12 +111,13 @@ const Skills = () => {
             {tools.map((tool, index) => (
               <Card
                 key={index}
-                className="glass-card border-none p-6 text-center hover-lift group"
+                className="glass-card border-none p-6 text-center hover-lift group perspective-card relative overflow-hidden"
               >
-                <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 group-hover:rotate-12 transition-all neon-glow relative z-10">
                   <tool.icon className="w-6 h-6 text-white" />
                 </div>
-                <p className="font-medium text-sm">{tool.name}</p>
+                <p className="font-medium text-sm relative z-10 group-hover:text-primary transition-colors">{tool.name}</p>
               </Card>
             ))}
           </div>
